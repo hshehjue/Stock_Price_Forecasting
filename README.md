@@ -1,1 +1,1 @@
-# Stock_Price_Forecasting
+# Stock Price Forecasting with LSTM and DistilBERT Models
