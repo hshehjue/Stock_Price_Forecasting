@@ -1,5 +1,5 @@
 # Stock Price Forecasting with LSTM-RNN and DistilBERT-base Deep Learning Models
-### [Final Code](https://github.com/hshehjue/IntegrityM-Capstone_Project/tree/main/Codes)
+### [Final Code](https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/6.Final_Forecasting.ipynb)
 
 ## Information 
 * **Creator:** SeungHeon Han
@@ -43,7 +43,27 @@
     - [Yahoo Finance Historical Data](https://finance.yahoo.com/)
   * **Pretrained Distilbert-base-uncased:**
     - Huggingface API
-  
 
+## 2. Models
+
+### DistilBert-Base-Uncased Model Fine-tuned on Kaggle News Data
+  - **Usage:** Sentiment Analysis
+  - **Hyperparameters:** 
+    - *Loss Function:* SparseCategoricalCrossentropy
+    - *Optimizer:* Adam
+    - *Learning Rate:* Learning Rate Schedular
+      - Start Rate = 0.01
+      - End Rate = 1e-5
+      - Power = 0.5
+      - Decay Steps = len(train_x)/batch_size * num_epochs
+    - *Epochs:* 20
+    - *Batch Size:* 8
+    - *Metric: Sparse Categorical Accuracy*
+  
+  - **Performance on Test Set:**
+    - ***Accuracy:*** 0.937 
+    - ***F1-Score:*** 0.953 
+
+       
 
 
