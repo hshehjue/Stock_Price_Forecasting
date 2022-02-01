@@ -95,6 +95,17 @@
     - *Epochs:* 5
     - *Batch Size:* 8
     - *Metric: Mean Squared Error*
+    - *# of LSTM Layers:* 3
+    - *Output Space:* 50
+    - *Activation:* tanh
+    - *Recurrent Activation:* sigmoid
+```
+model = Sequential()
+model.add(LSTM(50, return_sequences=True, input_shape=(X_train.shape[1],X_train.shape[2])))
+model.add(LSTM(50, return_sequences=True))
+model.add(LSTM(50))
+model.add(Dense(y_train.shape[1]))
+```
   - **Number of Parameters** 
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=60% height=10%>
 
