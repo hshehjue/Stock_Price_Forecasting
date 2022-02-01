@@ -124,12 +124,15 @@ model.add(Dense(y_train.shape[1]))
     - Mean Absolute Percentage Error (MAPE)
   
   * **Comparison**
-  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/performance.png width=60% height=60%>
-     
+  
 _| **RMSE** | **MAPE**
 ---|---|---
 **Baseline** | 5.99 | 0.19
-**Model** | 5.06 | 0.17   
+**Model** | 5.06 | 0.17 
+
+<img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/performance.png width=80% height=80%>
+     
+  
 
 
 
