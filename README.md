@@ -73,6 +73,7 @@
   - **Target Stock Item:**
     - *Companies listed in NASDAQ Market*
     - ***Apple Inc (AAPL) in this case***
+  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/apple_nasdaq.png width=60% height=60%>
   
   - **Variables:**
     - Target Feature (One-day-ahead): 
