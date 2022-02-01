@@ -113,3 +113,4 @@ model.add(Dense(y_train.shape[1]))
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=60% height=10%>
 
 
+
