@@ -128,8 +128,8 @@ model.add(Dense(y_train.shape[1]))
      
 _| **RMSE** | **MAPE**
 ---|---|---
-Baseline | 5.99 | 0.19
-    
+**Baseline** | 5.99 | 0.19
+**Model** | 5.06 | 0.17   
 
 
-**Model | 5.06 | 0.17**
+
