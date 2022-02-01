@@ -173,7 +173,7 @@ but this experiement cannot offer the high extent of its contributions due to th
     - ***Potential Solution***
       - find a source that offers news articles by company so that I can take only the articles of interest
   
-  - multiple articles about the same company are released on the same day
+  - Multiple articles about the same company are released on the same day
     - the multiple articles can deliever different tones so the daily sentiment data of a specific company cannot be always coherent 
     - ***Potential Solution***
       - incorporate neutral sentiment as well and take the same method I did in this experiment 
