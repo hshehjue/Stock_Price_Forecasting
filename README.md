@@ -60,7 +60,7 @@
     - *Batch Size:* 8
     - *Metric: Sparse Categorical Accuracy*
   - **Number of Parameters** 
-  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/bert_parameters.png width=80% height=10%>
+  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/bert_parameters.png width=60% height=10%>
   
   - **Performance on Test Set:**
    
@@ -101,7 +101,7 @@
     - *Batch Size:* 8
     - *Metric: Sparse Categorical Accuracy*
   - **Number of Parameters** 
-  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=80% height=10%>
+  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=60% height=10%>
 
        
 
