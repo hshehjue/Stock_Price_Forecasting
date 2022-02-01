@@ -17,7 +17,7 @@
 
 ## 1. Executive Summary
 * **Project Goal:**
-  - Incorporate the tones of online news articles into a traditional stock price forecasting model carried out with ubiquitous quantitative data (Open, Close, Adj-Close, Volume, High, Low) to improve the accuracy of adjusted-closing price forecast. In order for including the sentiment of articles, a binary text classification (sentiment analysis) is implemented on web news headlines with positive/negative labels.
+  - Incorporate the tones of online news articles into a traditional stock price forecasting model carried out with ubiquitous quantitative data (Open, Close, Adj-Close, Volume, High, Low) to improve the accuracy of adjusted-closing price forecast. In order for including the sentiment of articles, a binary text classification (sentiment analysis) is implemented on web news headlines with positive/negative labels. The overall codes are written in a practical manner so that users can arbitrarily input any values of interest by using user-defined input() functions.
 
 * **Success Criteria:**
   - The forecasting model trained on both ticker and news sentiment data is expected to outperform the model trained only on the ticker data (Baseline). The used evaluation metrics are Root Mean Squared Error (RMSE) and Mean Absolute Percentage Error (MAPE). an A/B testing based on the performance measured by the two metrics can present the intervention of the sentiment data in a forecast and the effectiveness of the target model in comparison with the baseline model.
@@ -73,7 +73,7 @@
   - **Target Stock Item:**
     - *Companies listed in NASDAQ Market*
     - ***Apple Inc (AAPL) in this case***
-  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/apple_nasdaq.png width=60% height=60%>
+  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/apple_nasdaq.png width=800% height=20%>
   
   - **Variables:**
     - Target Feature (One-day-ahead): 
@@ -112,6 +112,19 @@ model.add(Dense(y_train.shape[1]))
   
   - **Number of Parameters** 
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=60% height=10%>
+
+
+## 3. Overall Performance 
+  * **Baseline Model**
+    - the identical stacked-LSTM RNN Time Series Forecasting model 
+    - DOES NOT include the sentiment of news headlines as a predictor 
+
+  * **Evaluation Metrics**
+    - Root Mean Squared Error (RMSE)
+    - Mean Absolute Percentage Error (MAPE)
+  
+  * **Comparison**
+  
 
 
 
