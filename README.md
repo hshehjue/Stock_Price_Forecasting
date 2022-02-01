@@ -60,7 +60,7 @@
     - *Batch Size:* 8
     - *Metric: Sparse Categorical Accuracy*
     
-    <img src=https://github.com/hshehjue/IntegrityM-Capstone_Project/blob/main/Images/RF_importance.png width=60% height=60%>
+    <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/bert_parameters.png width=60% height=60%>
 
   
   - **Performance on Test Set:**
