@@ -86,7 +86,7 @@
       - *High*
       - *Low*
       - *Closing Price of NASDAQ Composite (^IXIC)*
-      - *Dummies for Positive/Negative Sentiment
+      - *Dummies for Positive/Negative Sentiment*
     
   - **Hyperparameters:** 
     - *Time Steps:* 5 days
