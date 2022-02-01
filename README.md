@@ -3,7 +3,7 @@
 
 ## Information 
 * **Creator:** SeungHeon Han
-* **Email:** seung225@gwu.edu (SeungHeon Han)
+* **Email:** seung225@gwu.edu 
 * **Duration:** 1/20/2022 - 1/31/2022
 * **Environment:**
   - Python v3.7.5 
