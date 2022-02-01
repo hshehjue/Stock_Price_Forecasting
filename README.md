@@ -3,7 +3,6 @@
 
 ## Information 
 * **Creator:** SeungHeon Han
-* **Email:** seung225@gwu.edu 
 * **Duration:** 1/20/2022 - 1/31/2022
 * **Environment:**
   - Python v3.7.5 
@@ -18,7 +17,7 @@
 
 ## 1. Executive Summary
 * **Project Goal:**
-  - Incorporate tones of online news articles into a traditional stock price forecast carried out with ubiquitous quantitative data (Open, Close, Adj-Close, Volume, High, Low) as a qualitative variable to discern its effectiveness on forecasting the adjusted closing prices of stock items. In order for including the tones of articles, a binary text classification (sentiment analysis) is implemented on web news headlines with positive/negative labels.
+  - Incorporate the tones of online news articles into a traditional stock price forecasting model carried out with ubiquitous quantitative data (Open, Close, Adj-Close, Volume, High, Low) to improve the accuracy of adjusted-closing price forecast. In order for including the sentiment of articles, a binary text classification (sentiment analysis) is implemented on web news headlines with positive/negative labels.
 
 * **Success Criteria:**
   - The forecasting model trained on both ticker and news sentiment data is expected to outperform the model trained only on the ticker data (Baseline). The used evaluation metrics are Root Mean Squared Error (RMSE) and Mean Absolute Percentage Error (MAPE). an A/B testing based on the performance measured by the two metrics can present the intervention of the sentiment data in a forecast and the effectiveness of the target model in comparison with the baseline model.
