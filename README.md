@@ -17,20 +17,26 @@
 
 ## 1. Executive Summary
 * **Project Goal:**
-  - Incorporate the tones of online news articles into a traditional stock price forecasting model carried out with ubiquitous quantitative data (Open, Close, Adj-Close, Volume, High, Low) to improve the accuracy of adjusted-closing price forecast. In order for including the sentiment of articles, a binary text classification (sentiment analysis) is implemented on web news headlines with positive/negative labels. The overall codes are written in a practical manner so that users can arbitrarily input any values of interest by using user-defined input() functions.
+  - Incorporate the tones of online news articles into a traditional stock price forecasting model carried out with ubiquitous quantitative data (Open, Close, Adj-Close, Volume, High, Low) to improve the accuracy of adjusted-closing price forecast. In order for including the sentiment of articles, a text classification (sentiment analysis) is implemented on web news headlines with positive/negative labels (neutral sentiment is included during a further step). The overall codes are written in a practical manner so that users can arbitrarily input any values of interest by using user-defined input() functions.
 
 * **Success Criteria:**
-  - The forecasting model trained on both ticker and news sentiment data is expected to outperform the model trained only on the ticker data (Baseline). The used evaluation metrics are Root Mean Squared Error (RMSE) and Mean Absolute Percentage Error (MAPE). an A/B testing based on the performance measured by the two metrics can present the intervention of the sentiment data in a forecast and the effectiveness of the target model in comparison with the baseline model.
-  
+  - The forecasting model trained on both ticker and news sentiment data is expected to outperform the model trained only on the ticker data (Baseline). The used evaluation metrics are Root Mean Squared Error (RMSE) and Mean Absolute Percentage Error (MAPE). an A/B testing based on the performance measured by the two metrics can present the contribution of the sentiment data to the forecast.
+ 
 * **Work Flow:**
   1. Fine-tuning the pretrained DistilBert-base-uncased model on finance news headline dataset available in Kaggle
   2. Crawling and scraping web news headlines and the corresponding keywords (symbols)
   3. Selecting a single stock item whose symbol appears most frequently and gathering the corresponding headlines  
   4. Implementing text classification on the scraped headlines with postive and negative lables
-  5. Scraping numeric ticker data of a stock item of interest and NASDAQ Composite
-  6. Merging the classified headline data and the scraped ticker data
-  7. Training a stacked LSTM RNN model on the preprocessed data
-  8. Comparing the performance with the model trained only on the ticker data
+  5. the same day usually has multiple articles. So, average the predicted sentiment values (1 or 0) by the number of articles on the same day, then:
+  ```
+  senti_by_time['sentiment'] = senti_by_time['sentiment'].apply(lambda x:"positive" if x > 0.5 
+                                                                else ("negative" if x < 0.5 
+                                                                else "neutral"))
+  ```
+  6. Scraping numeric ticker data of a stock item of interest and NASDAQ Composite
+  7. Merging the classified headline data and the scraped ticker data
+  8. Training a stacked LSTM RNN model on the preprocessed data
+  9. Comparing the performance with the model trained only on the ticker data
 
 * **Sources**
   * **NASDAQ Symbol List:**
@@ -43,6 +49,15 @@
     - [Yahoo Finance Historical Data](https://finance.yahoo.com/)
   * **Pretrained Distilbert-base-uncased:**
     - Huggingface API
+
+* **Training & Testing Description:**
+  - Only about 3months-long news articles are accessible in Benzinga website
+  - Scraping headlies related to **Apple(AAPL)** ranging from 11/2/2021 to 1/31/2022 
+  - Scraping daily ticker data of **Apple(AAPL) & NASDAQ Composite(^IXIC)** ranging from 11/2/2021 to 1/31/2022 
+  - Time Steps = 5 days
+  - train : test = 80% : 20%
+    - training with 49 days-long daily data
+    - testing with 13 days-long daily data
 
 ## 2. Models
 
@@ -86,7 +101,7 @@
       - *High*
       - *Low*
       - *Closing Price of NASDAQ Composite (^IXIC)*
-      - *Dummies for Positive/Negative Sentiment*
+      - *Dummies for Positive/Negative/Neutral Sentiment*
     
   - **Hyperparameters:** 
     - *Time Steps:* 5 days
@@ -115,6 +130,7 @@ model.add(Dense(y_train.shape[1]))
 
 
 ## 3. Overall Performance 
+ 
   * **Baseline Model**
     - the identical stacked-LSTM RNN Time Series Forecasting model 
     - DOES NOT include the sentiment of news headlines as a predictor 
@@ -131,10 +147,35 @@ model.add(Dense(y_train.shape[1]))
     **Model** | 5.06 | 0.17 
 
 <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/performance.png width=80% height=80%>
-     
-    - RMSE of the model with sentiment variable has been reduced by 0.93
-    - MAPE of the model with sentiment variable has reduced by 0.02
 
+* **Prediction Plot**
+<img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/final.png width=80% height=60%>
 
+## 4. Conclusion
 
+  - the model with the sentiment variable has improved upon the baseline in RMSE and MAPE by 0.93 and 0.02 respectively. The model showed the increased accuracy over the additional implementations but at a distinct degree of the improvement. It implies that news articles can somewhat influence the movement of stock prices 
+but this experiement cannot offer the high extent of its contributions due to the errors of sentiment analysis and the difficulty in dealing with neutral sentiment of news articles. So, I would conclude that the built model lacks the utility in leveraging for the actual investment activities.
 
+## 5. Limitations & Potential Solutions
+  1. Fine-tuning DistilBERT model on a labeled dataset available in Kaggle 
+    - the Kaggle dataset also consists of web news headlines but not perfectly compatible with the input headline data collected from Benzinga.com 
+    - the accuracy on test set does not guarantee the accuracy of the text classification of the headlines scraped from Benzinga.com
+    - ***Potential Solution***
+      - once a source of news is decided, the articles or headlines has to be manually labeled to train BERT 
+        
+  2. Benzinga website posts only about 3 months-long news articles
+    - it bothers training a model with large historical data, which makes it difficult to drive up the overall prediction accuracy
+    - ***Potential Solution***
+      - Use another source where longer-term news articles are available 
+      
+  3. Sentiment analysis of news headlines cannot accurately predict the tones of the whole articles
+    - scraping daily-updated whole ariticles is highly costly
+    - ***Potential Solution***
+      - find a source that offers news articles by company so that I can take only the articles of interest
+  
+  4. multiple articles about the same company are released on the same day
+    - the multiple articles can deliever different tones so the daily sentiment data of a specific company cannot be always coherent 
+    - ***Potential Solution***
+      - incorporate neutral sentiment as well and take the same method I did in this experiment 
+    
+   
