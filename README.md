@@ -59,6 +59,9 @@
     - *Epochs:* 20
     - *Batch Size:* 8
     - *Metric: Sparse Categorical Accuracy*
+    
+    <img src=https://github.com/hshehjue/IntegrityM-Capstone_Project/blob/main/Images/RF_importance.png width=60% height=60%>
+
   
   - **Performance on Test Set:**
    
