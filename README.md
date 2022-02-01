@@ -132,7 +132,9 @@ model.add(Dense(y_train.shape[1]))
 
 <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/performance.png width=80% height=80%>
      
-  
+    - RMSE of the model with sentiment variable has been reduced by 0.93
+    - MAPE of the model with sentiment variable has reduced by 0.02
+
 
 
 
