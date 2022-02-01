@@ -68,7 +68,6 @@
      ------------|------------
      0.937 | 0.953
 
-
 ### II. Stacked-LSTM RNN
   - **Usage:** Time Series Forecast
   - **Target Stock Item:**
@@ -106,8 +105,11 @@ model.add(LSTM(50, return_sequences=True))
 model.add(LSTM(50))
 model.add(Dense(y_train.shape[1]))
 ```
+
+  - **Optimal Epochs**
+  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_process.png width=60% height=60%>
+  
   - **Number of Parameters** 
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=60% height=10%>
-
 
 
