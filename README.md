@@ -73,17 +73,20 @@
   - **Usage:** Time Series Forecast
   - **Target Stock Item:**
     - *Companies listed in NASDAQ Market*
-    - *APPLE Inc (AAPL) in this case* 
+    - ***Apple Inc (AAPL) in this case***
+  
   - **Variables:**
     - Target Feature (One-day-ahead): 
-      - Adjusted Closing Price 
+      - *Adjusted Closing Price*
+    
     - Predictors (Time Steps = 5 days):
-      - Opening Price
-      - Closing Price
-      - Adj-Closing Price
-      - High
-      - Low
-      - Closing Price of NASDAQ Composite (^IXIC)
+      - *Opening Price*
+      - *Closing Price*
+      - *Adj-Closing Price*
+      - *High*
+      - *Low*
+      - *Closing Price of NASDAQ Composite (^IXIC)*
+      - *Dummies for Positive/Negative Sentiment
     
   - **Hyperparameters:** 
     - *Time Steps:* 5 days
