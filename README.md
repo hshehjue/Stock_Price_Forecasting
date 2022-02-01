@@ -90,19 +90,13 @@
     
   - **Hyperparameters:** 
     - *Time Steps:* 5 days
-    - *Loss Function:* SparseCategoricalCrossentropy
+    - *Loss Function:* Mean Squared Error
     - *Optimizer:* Adam
-    - *Learning Rate:* Learning Rate Schedular
-      - Start Rate = 0.01
-      - End Rate = 1e-5
-      - Power = 0.5
-      - Decay Steps = len(train_x)/batch_size * num_epochs
-    - *Epochs:* 20
+    - *Epochs:* 5
     - *Batch Size:* 8
-    - *Metric: Sparse Categorical Accuracy*
+    - *Metric: Mean Squared Error*
   - **Number of Parameters** 
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_parameters.png width=60% height=10%>
 
-       
 
 
