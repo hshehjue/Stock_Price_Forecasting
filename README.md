@@ -61,8 +61,10 @@
     - *Metric: Sparse Categorical Accuracy*
   
   - **Performance on Test Set:**
-    - ***Accuracy:*** 0.937 
-    - ***F1-Score:*** 0.953 
+    **Accuracy** |  **F1-Score**
+  -----------------|------------------
+  0.937 | 0.953
+
 
        
 
