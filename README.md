@@ -157,23 +157,23 @@ model.add(Dense(y_train.shape[1]))
 but this experiement cannot offer the high extent of its contributions due to the errors of sentiment analysis and the difficulty in dealing with neutral sentiment of news articles. So, I would conclude that the built model lacks the utility in leveraging for the actual investment activities.
 
 ## 5. Limitations & Potential Solutions
-  1. Fine-tuning DistilBERT model on a labeled dataset available in Kaggle 
+  - Fine-tuning DistilBERT model on a labeled dataset available in Kaggle 
     - the Kaggle dataset also consists of web news headlines but not perfectly compatible with the input headline data collected from Benzinga.com 
     - the accuracy on test set does not guarantee the accuracy of the text classification of the headlines scraped from Benzinga.com
     - ***Potential Solution***
       - once a source of news is decided, the articles or headlines has to be manually labeled to train BERT 
         
-  2. Benzinga website posts only about 3 months-long news articles
+  - Benzinga website posts only about 3 months-long news articles
     - it bothers training a model with large historical data, which makes it difficult to drive up the overall prediction accuracy
     - ***Potential Solution***
       - Use another source where longer-term news articles are available 
       
-  3. Sentiment analysis of news headlines cannot accurately predict the tones of the whole articles
+  - Sentiment analysis of news headlines cannot accurately predict the tones of the whole articles
     - scraping daily-updated whole ariticles is highly costly
     - ***Potential Solution***
       - find a source that offers news articles by company so that I can take only the articles of interest
   
-  4. multiple articles about the same company are released on the same day
+  - multiple articles about the same company are released on the same day
     - the multiple articles can deliever different tones so the daily sentiment data of a specific company cannot be always coherent 
     - ***Potential Solution***
       - incorporate neutral sentiment as well and take the same method I did in this experiment 
