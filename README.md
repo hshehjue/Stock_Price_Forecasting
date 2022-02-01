@@ -46,9 +46,47 @@
 
 ## 2. Models
 
-### DistilBert-Base-Uncased Model Fine-tuned on Kaggle News Data
-  - **Usage:** Sentiment Analysis
+### I. DistilBert-Base-Uncased Model Fine-tuned on Kaggle News Data
+  - **Usage:** Sentiment Analysis for News Headlines
   - **Hyperparameters:** 
+    - *Loss Function:* Sparse Categorical Crossentropy
+    - *Optimizer:* Adam
+    - *Learning Rate:* Learning Rate Schedular
+      - Start Rate = 0.01
+      - End Rate = 1e-5
+      - Power = 0.5
+      - Decay Steps = len(train_x)/batch_size * num_epochs
+    - *Epochs:* 20
+    - *Batch Size:* 8
+    - *Metric: Sparse Categorical Accuracy*
+  - **Number of Parameters** 
+  <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/bert_parameters.png width=60% height=60%>
+  
+  - **Performance on Test Set:**
+   
+     **Accuracy** | **F1-Score**
+     ------------|------------
+     0.937 | 0.953
+
+
+### II. Stacked-LSTM RNN
+  - **Usage:** Time Series Forecast
+  - **Target Stock Item:**
+    - *Companies listed in NASDAQ Market*
+    - *APPLE Inc (AAPL) in this case* 
+  - **Variables:**
+    - Target Feature (One-day-ahead): 
+      - Adjusted Closing Price 
+    - Predictors (Time Steps = 5 days):
+      - Opening Price
+      - Closing Price
+      - Adj-Closing Price
+      - High
+      - Low
+      - Closing Price of NASDAQ Composite (^IXIC)
+    
+  - **Hyperparameters:** 
+    - *Time Steps:* 5 days
     - *Loss Function:* SparseCategoricalCrossentropy
     - *Optimizer:* Adam
     - *Learning Rate:* Learning Rate Schedular
@@ -61,14 +99,6 @@
     - *Metric: Sparse Categorical Accuracy*
   - **Number of Parameters** 
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/bert_parameters.png width=60% height=60%>
-
-  
-  - **Performance on Test Set:**
-   
-     **Accuracy** | **F1-Score**
-     ------------|------------
-     0.937 | 0.953
-
 
        
 
