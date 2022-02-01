@@ -106,7 +106,7 @@ model.add(LSTM(50))
 model.add(Dense(y_train.shape[1]))
 ```
 
-  - **Optimal Epochs**
+  - **Optimal Epochs = 5**
   <img src=https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/images/lstm_process.png width=60% height=60%>
   
   - **Number of Parameters** 
