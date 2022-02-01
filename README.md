@@ -1,5 +1,5 @@
 # Stock Price Forecasting with LSTM-RNN and DistilBERT-base Deep Learning Models
-### [Final Code](https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/6.Final_Forecasting.ipynb)| [Fine-tuned DistilBert Model](https://1drv.ms/u/s!AmvqAkK8fiM5gSKJqmru9q7JrKn2?e=N1tLkl)
+### [Final Code](https://github.com/hshehjue/Stock_Price_Forecasting/blob/main/6.Final_Forecasting.ipynb) | [Fine-tuned DistilBert Model](https://1drv.ms/u/s!AmvqAkK8fiM5gSKJqmru9q7JrKn2?e=N1tLkl)
 
 ## Information 
 * **Creator:** SeungHeon Han
